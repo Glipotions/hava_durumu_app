@@ -5,6 +5,8 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
+import 'daily_weather_card.dart';
+
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
@@ -180,10 +182,10 @@ class _HomePageState extends State<HomePage> {
   Container buildDailyWeatherCards(BuildContext context) {
     List<Widget> cards = List.empty();
 
-    // for (int i = 0; i < 5; i++) {
-    //   cards[i] = DailyWeather(
-    //       image: abbr[i], temp: temps[i].toString(), date: dates[i]);
-    // }
+    for (int i = 0; i < 5; i++) {
+      cards[i] = DailyWeather(
+          image: abbr[i], temp: temps[i].toString(), date: dates[i]);
+    }
 
     return Container(
       height: 120,
